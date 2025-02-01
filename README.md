@@ -77,11 +77,7 @@ meson setup testdir
 ```
 
 ```
-cd testdir/
-```
-
-```
-meson test
+meson test -C testdir
 ```
 
 #### Git-hooks for Ctags Pre-commit
