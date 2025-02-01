@@ -23,13 +23,29 @@ meson install
 #### Usage
 
 The default path to the ics file is `~/.local/share/evolution/calendar/system/calendar.ics`.\
-(The default path for the builtin evolution calendar.)
+(The default path for the builtin `evolution` calendar.)
 
 ```
-icscli
+$ icscli
+Current date and time: 2025-02-01 05:06:40
+
+2025-02-03 - 2025-02-09
+SUMMARY: Vacation
+
+2025-02-28 08:00:00 - 08:30:00
+SUMMARY: Gym
+
+2025-03-10 14:00:00 - 15:00:00
+SUMMARY: Meeting
+
+2025-04-26 - 2025-04-27
+SUMMARY: Weekend Hike
+
+2025-05-19 09:00:00 - 10:00:00
+SUMMARY: Doctor's Appointment
 ```
 
-for a custom path
+To use a different path to the ics file:
 ```
 icscli -f path/to/ics/file.ics
 ```
@@ -61,4 +77,5 @@ This will run `ctags` on every commit.
 #### TODO
 
 - improve and automate unit testing
+- make ics file path configurable
 - add cli argument that will not show ongoing events, only upcoming events
