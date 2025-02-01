@@ -81,10 +81,6 @@ cd testdir/
 ```
 
 ```
-meson compile
-```
-
-```
 meson test
 ```
 
