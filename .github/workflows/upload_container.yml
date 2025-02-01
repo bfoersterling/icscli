@@ -22,7 +22,7 @@ jobs:
 
       - name: Build Docker image
         run: |
-          docker build -t ghcr.io/${{ github.repository_owner }}/meson-gcc:latest .github/workflows
+          docker build -t ghcr.io/${{ github.repository_owner }}/meson-gcc:latest docker
 
       - name: Push Docker image
         run: |
