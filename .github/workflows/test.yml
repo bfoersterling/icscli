@@ -1,0 +1,13 @@
+name: test
+
+on: [push, pull_request]
+
+jobs:
+  test:
+    runs-on: ubuntu-24.04
+    container: ghcr.io/bfoersterling/meson-gcc:latest
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v4
+      - run: cd unit-tests && meson setup testdir
+      - run: meson test -C unit-tests/testdir
