@@ -1,0 +1,5 @@
+icscli
+.gitconfig
+*.o
+*.out
+tags

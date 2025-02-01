@@ -1,0 +1,27 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//www.example.com//iCal 4.0.3//EN
+METHOD:PUBLISH
+CALSCALE:GREGORIAN
+BEGIN:VEVENT
+CREATED:20240102T105004
+UID:ical-19709628-example-com
+DTSTART;VALUE=DATE:20250622T000000
+DTEND;VALUE=DATE:20250711T000000
+TRANSP:TRANSPARENT
+SUMMARY:vacation
+ (approved)
+  (again)
+DESCRIPTION:vacation\n\n
+ status: approved\n
+  workdays: 13,0\n\n
+   entered by: John Doe\n
+    entry date: Tue, 2024-01-02, 10:09 AM\n
+     approved on: -\n\n\n\n
+      Powered by example.com\n
+DTSTAMP:20240102T105004
+CATEGORIES:example.com
+X-MICROSOFT-CDO-BUSYSTATUS:OOF
+SEQUENCE:8
+END:VEVENT
+END:VCALENDAR

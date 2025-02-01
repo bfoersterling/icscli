@@ -1,0 +1,29 @@
+#!/bin/bash
+
+# make a dir called git-hooks in the top level of your repo
+# put the following line in a Readme.md:
+# git config --local core.hooksPath git-hooks
+# the user has to actively enable git hooks
+# this script has to be named "pre-commit" and should be placed
+# in the core.hooksPath
+
+if type ctags &>> /dev/null; then
+        ctags_installed=1
+else
+        ctags_installed=0
+fi
+
+if ! (( ${ctags_installed} )); then
+	printf "Ctags is not installed! Git hooks are enabled and can only be executed if it is installed.\n"
+	printf "Commit was aborted.\n"
+	exit 1
+fi
+
+if ! ctags -R src/.; then
+	printf "Ctags failed.\n\n"
+	exit 1
+else
+	printf "Ctags was successfully executed.\n"
+fi
+
+exit 0
