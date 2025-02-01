@@ -66,6 +66,28 @@ icscli -i
 sudo rm -fv /usr/local/bin/icscli
 ```
 
+#### Unit Testing
+
+```
+cd unit-tests
+```
+
+```
+meson setup testdir
+```
+
+```
+cd testdir/
+```
+
+```
+meson compile
+```
+
+```
+meson test
+```
+
 #### Git-hooks for Ctags Pre-commit
 
 The developer has to actively enable git hooks:
