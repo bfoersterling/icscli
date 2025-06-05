@@ -9,15 +9,11 @@
 #### Installation
 
 ```
-cd src/builddir
-``` 
-
-```
-meson compile
+just
 ```
 
 ```
-meson install
+just install
 ```
 
 #### Usage

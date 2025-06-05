@@ -4,3 +4,6 @@ default:
 
 install:
 	cd src/builddir && meson install
+
+clean:
+	rm -rfv src/builddir
