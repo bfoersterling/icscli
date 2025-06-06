@@ -86,6 +86,7 @@ This will run `ctags` on every commit.
 
 #### TODO
 
+- add option to import .ics files (for single events)
 - improve and automate unit testing
 - make ics file path configurable
 - add cli argument that will not show ongoing events, only upcoming events
