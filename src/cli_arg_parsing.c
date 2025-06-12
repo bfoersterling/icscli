@@ -37,7 +37,7 @@ void get_cli_args(int argc, char **argv, char **file_name, int *show_all_events)
 				*show_all_events = 1;
 				break;
 			case 'f':
-				*file_name = optarg;
+				*file_name = strcpy(*file_name, optarg);
 				break;
 			case 'h':
 				usage();
