@@ -3,9 +3,12 @@
 #include "cli_arg_parsing.h"
 #include "date_time_handling.h"
 #include <stdio.h>
+#include <stdlib.h>
 
 int main(int argc, char **argv) {
-	char *ics_path = "";
+	char *ics_path = malloc(256);
+	ics_path = memset(ics_path, '\0', 256);
+
 	int show_all_events = 0;
 
 	get_cli_args(argc, argv, &ics_path, &show_all_events);
@@ -24,6 +27,8 @@ int main(int argc, char **argv) {
 	print_upcoming(head, current_date, show_all_events);
 
 	free_list(head);
+
+	free(ics_path);
 
 	return 0;
 }

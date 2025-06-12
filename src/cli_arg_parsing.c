@@ -16,32 +16,35 @@ void usage() {
 void get_cli_args(int argc, char **argv, char **file_name, int *show_all_events) {
 	int opt = 0;
 
-	memset(file_name, '\0', strlen(*file_name));
+	const char *home = getenv("HOME");
+	*file_name = strcat(*file_name, home);
 
-	char *home = getenv("HOME");
-	*file_name = home;
+	if (*file_name == NULL) {
+		printf("strcat returned NULL.\n");
+		exit(1);
+	}
 
 	if (home != NULL) {
-	  strcat(*file_name, "/.local/share/evolution/calendar/system/calendar.ics");
+		strcat(*file_name, "/.local/share/evolution/calendar/system/calendar.ics");
 	} else {
-	  printf ("Environment variable HOME is not set.\n");
-	  exit(1);
+		printf ("Environment variable HOME is not set.\n");
+		exit(1);
 	}
 
 	while ((opt = getopt(argc, argv, "f:ahi")) != -1) {
-    	switch(opt) {
+		switch(opt) {
 			case 'a':
-			*show_all_events = 1;
-			break;
+				*show_all_events = 1;
+				break;
 			case 'f':
-			*file_name = optarg;
-			break;
+				*file_name = optarg;
+				break;
 			case 'h':
-			usage();
-			break;
+				usage();
+				break;
 			case 'i':
-			insert_event(*file_name);
-			break;
-    	}
+				insert_event(*file_name);
+				break;
+		}
 	}
 }
