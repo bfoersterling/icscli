@@ -5,12 +5,12 @@
 #include <stdlib.h>
 
 void print_list(struct event *head) {
-  while (head != NULL) {
-    printf("%s\n", head->start_date);
-    printf("%s\n", head->end_date);
-    printf("%s\n", head->summary);
-    head = head->next;
-  }
+	while (head != NULL) {
+		printf("%s\n", head->start_date);
+		printf("%s\n", head->end_date);
+		printf("%s\n", head->summary);
+		head = head->next;
+	}
 }
 
 void sorted_insert(struct event** head, char start_date[], char end_date[], char summary[]) {
@@ -28,7 +28,7 @@ void sorted_insert(struct event** head, char start_date[], char end_date[], char
 		struct event* current = *head;
 		while (current->next!=NULL && strcmp(current->next->start_date, new_node->start_date) < 0)
 			current = current->next;
-	
+
 		new_node->next = current->next;
 		current->next = new_node;
 	}
@@ -36,14 +36,14 @@ void sorted_insert(struct event** head, char start_date[], char end_date[], char
 
 void free_list(struct event *head)
 {
-   struct event* tmp;
+	struct event* tmp;
 
-   while (head != NULL)
-    {
-       tmp = head;
-       head = head->next;
-       free(tmp);
-    }
+	while (head != NULL)
+	{
+		tmp = head;
+		head = head->next;
+		free(tmp);
+	}
 }
 
 // print_upcoming() also prints ongoing events

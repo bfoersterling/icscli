@@ -6,17 +6,17 @@
 #include <string.h>
 
 void seek_string_a(int fd, char search_string[]) {
-  int j = 0;
-  char char_reader = '\0';
+	int j = 0;
+	char char_reader = '\0';
 
-  while(read(fd, &char_reader, 1)) {
-    if (char_reader == search_string[j]) {
-      j++;
-    } else {
-      j = 0;
-    }
-    if (j == (strlen(search_string))) {
-      break;
-    }
-  }
+	while(read(fd, &char_reader, 1)) {
+		if (char_reader == search_string[j]) {
+			j++;
+		} else {
+			j = 0;
+		}
+		if (j == (strlen(search_string))) {
+			break;
+		}
+	}
 }

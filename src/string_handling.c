@@ -44,43 +44,43 @@ void cut_string(char my_string[], char delimiter, int side) {
 // you might want to write a new function that replaces '\r' and '\n'
 // with a delimiter of user's choice
 void remove_nl_and_cr(char raw_string[]) {
-  char processed_string[strlen(raw_string)];
+	char processed_string[strlen(raw_string)];
 
-  // counter for num of elements of processed_string
-  int j = 0;
-  for (int i = 0; i<strlen(raw_string); i++) {
-    if (raw_string[i] == '\n' || raw_string[i] == '\r') {
-      continue;
-    } else {
-      processed_string[j] = raw_string[i];
-      j++;
-    }
-  }
-  processed_string[j] = '\0';
+	// counter for num of elements of processed_string
+	int j = 0;
+	for (int i = 0; i<strlen(raw_string); i++) {
+		if (raw_string[i] == '\n' || raw_string[i] == '\r') {
+			continue;
+		} else {
+			processed_string[j] = raw_string[i];
+			j++;
+		}
+	}
+	processed_string[j] = '\0';
 
-  memset(raw_string, '\0', strlen(raw_string));
-  strcpy(raw_string, processed_string);
+	memset(raw_string, '\0', strlen(raw_string));
+	strcpy(raw_string, processed_string);
 }
 
 // remove new lines, carriage returns and spaces
 void remove_whitespace(char raw_string[]) {
-  char processed_string[strlen(raw_string)];
+	char processed_string[strlen(raw_string)];
 
-  // counter for num of elements of processed_string
-  int j = 0;
-  for (int i = 0; i<strlen(raw_string); i++) {
-    if (raw_string[i] == '\n' || raw_string[i] == '\r' \
-			|| raw_string[i] == ' ') {
-      continue;
-    } else {
-      processed_string[j] = raw_string[i];
-      j++;
-    }
-  }
-  processed_string[j] = '\0';
+	// counter for num of elements of processed_string
+	int j = 0;
+	for (int i = 0; i<strlen(raw_string); i++) {
+		if (raw_string[i] == '\n' || raw_string[i] == '\r' \
+				|| raw_string[i] == ' ') {
+			continue;
+		} else {
+			processed_string[j] = raw_string[i];
+			j++;
+		}
+	}
+	processed_string[j] = '\0';
 
-  memset(raw_string, '\0', strlen(raw_string));
-  strcpy(raw_string, processed_string);
+	memset(raw_string, '\0', strlen(raw_string));
+	strcpy(raw_string, processed_string);
 }
 
 void remove_until_delim(char raw_string[], char delimiter, int occurence) {

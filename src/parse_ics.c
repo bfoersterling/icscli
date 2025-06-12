@@ -30,7 +30,7 @@ void parse_event(char event_string[], struct event **head) {
 	assert(summary != NULL);
 
 	strncpy(start_date_str, start_date,
-		strchr(start_date + 1, '\n') - start_date);
+			strchr(start_date + 1, '\n') - start_date);
 
 	strncpy(end_date_str, end_date, strchr(end_date + 1, '\n') - end_date);
 
@@ -56,7 +56,7 @@ void unfolding_string(char *folded_string, char *unfolded_string) {
 	int j = 0;
 	for (int i = 0; i < strlen(folded_string); i++) {
 		if (folded_string[i] == '\r' && folded_string[i + 1] == '\n'
-		    && isblank(folded_string[i + 2])) {
+				&& isblank(folded_string[i + 2])) {
 			i += 3;
 			while (isblank(folded_string[i])) {
 				i++;
@@ -75,7 +75,7 @@ void unfolding_string(char *folded_string, char *unfolded_string) {
 /* this function takes the head of an empty initialized event list
  * and the path to the ics file
  * it will "fill" the list
-*/
+ */
 void parse_ics_file(char *file_path, struct event **head) {
 	char my_event[8192] = "";
 	char unfolded_event[8192] = "";

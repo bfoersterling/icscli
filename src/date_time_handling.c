@@ -126,12 +126,12 @@ void print_end_date (char end_date[], char start_date[]) {
 		// only print the end date if it is not the same as the start date
 		if (strcmp (start_date_chunk, end_date_chunk) != 0) {
 			printf ("%c%c%c%c-", end_date_chunk[0],
-				end_date_chunk[1], end_date_chunk[2],
-				end_date_chunk[3]);
+					end_date_chunk[1], end_date_chunk[2],
+					end_date_chunk[3]);
 			printf ("%c%c-", end_date_chunk[4],
-				end_date_chunk[5]);
+					end_date_chunk[5]);
 			printf ("%c%c ", end_date_chunk[6],
-				end_date_chunk[7]);
+					end_date_chunk[7]);
 		}
 
 		printf ("%c%c:", end_time_chunk[0], end_time_chunk[1]);

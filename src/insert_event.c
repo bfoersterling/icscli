@@ -73,7 +73,7 @@ void insert_event(char *file_name) {
 	write(myfd, dtstamp, strlen(dtstamp));
 	write(myfd, "\r\n", strlen("\r\n"));
 	write(myfd, "END:VEVENT\r\n", strlen("END:VEVENT\r\n"));
-	
+
 	write(myfd, "END:VCALENDAR\r\n", strlen("END:VCALENDAR\r\n"));
 
 	close(myfd);
