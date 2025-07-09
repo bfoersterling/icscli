@@ -9,10 +9,6 @@
 #### Installation
 
 ```
-just
-```
-
-```
 just install
 ```
 
