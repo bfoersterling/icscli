@@ -65,6 +65,12 @@ sudo rm -fv /usr/local/bin/icscli
 #### Unit Testing
 
 ```
+just test
+```
+
+Or manual:
+
+```
 cd unit-tests
 ```
 
