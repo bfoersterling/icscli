@@ -6,9 +6,9 @@ int main() {
 	// initialize empty list
 	struct event *head = NULL;
 
-	parse_ics_file("../../tests/calendar.ics", &head);
+	parse_ics_file("../../test_files/calendar.ics", &head);
 
-	parse_ics_file("../../tests/failed_cal.ics", &head);
+	parse_ics_file("../../test_files/failed_cal.ics", &head);
 
 	return 0;
 }
