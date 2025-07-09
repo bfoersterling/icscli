@@ -88,6 +88,7 @@ This will run `ctags` on every commit.
 
 #### TODO
 
+- bugfix: remove carriage returns from event.summary
 - add option to import .ics files (for single events)
 - improve and automate unit testing
 - make ics file path configurable
