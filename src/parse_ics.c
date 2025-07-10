@@ -35,6 +35,7 @@ void parse_event(char event_string[], struct event **head) {
 	strncpy(end_date_str, end_date, strchr(end_date + 1, '\n') - end_date);
 
 	strncpy(summary_str, summary, strchr(summary + 1, '\n') - summary);
+	trim_space(summary_str);
 
 	// parse dates
 	remove_whitespace(start_date_str);

@@ -6,6 +6,7 @@
 // and choose the first part (side 0) or the second part (side 1)
 // the chosen part will overwrite the original string
 
+#include <ctype.h>
 #include <string.h>
 #include <stdlib.h>
 
@@ -100,4 +101,33 @@ void remove_until_delim(char raw_string[], char delimiter, int occurence) {
 	}
 	strcpy(raw_string, tmp_string);
 	free(tmp_string);
+}
+
+// remove all whitespace from the left side of a string
+void trim_left(char* input) {
+	int pos = 0;
+
+	while(isspace(input[pos])) {
+		pos++;
+	}
+
+	memmove(input, input + pos, strlen(input) + 1);
+}
+
+// remove all whitespace from the right side of a string
+void trim_right(char* input) {
+	int pos = strlen(input) - 1;
+
+	// reading a negative index is undefined behavior
+	while(pos >= 0 && isspace(input[pos])) {
+		pos--;
+	}
+
+	input[pos+1] = '\0';
+}
+
+// trim whitespace from the left and right side of a string
+void trim_space(char* input) {
+	trim_left(input);
+	trim_right(input);
 }

@@ -11,7 +11,7 @@ int main() {
 	parse_ics_file("../../test_files/calendar.ics", &head);
 
 	// BUG DETECTED - remove carriage returns!
-	assert(!strcmp(head->summary, "go for a walk\r"));
+	assert(!strcmp(head->summary, "go for a walk"));
 
 	parse_ics_file("../../test_files/failed_cal.ics", &head);
 
