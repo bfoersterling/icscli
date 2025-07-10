@@ -67,7 +67,7 @@ just test
 Or manual:
 
 ```
-cd unit-tests
+cd unit_tests
 ```
 
 ```
