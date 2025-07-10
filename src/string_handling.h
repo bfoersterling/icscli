@@ -6,3 +6,6 @@ void cut_string(char my_string[], char delimiter, int side);
 void remove_nl_and_cr(char raw_string[]);
 void remove_whitespace(char raw_string[]);
 void remove_until_delim(char raw_string[], char delimiter, int occurence);
+void trim_left(char* input);
+void trim_right(char* input);
+void trim_space(char* input);
