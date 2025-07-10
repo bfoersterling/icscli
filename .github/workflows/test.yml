@@ -9,5 +9,5 @@ jobs:
     steps:
       - name: Check out repository code
         uses: actions/checkout@v4
-      - run: cd unit-tests && meson setup testdir
-      - run: meson test -C unit-tests/testdir
+      - run: meson setup unit_tests/builddir unit_tests
+      - run: meson test -C unit_tests/builddir -v
