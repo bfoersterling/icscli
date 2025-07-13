@@ -77,7 +77,7 @@ void marshall_date_time (char date_time[]) {
 	char transformed_string[strlen (date_time)];
 	int j = 0;
 	remove_nl_and_cr (date_time);
-	for (int i = 0; i <= strlen (date_time); i++) {
+	for (size_t i = 0; i <= strlen (date_time); i++) {
 		if (date_time[i] != ':' && date_time[i] != '-') {
 			if (date_time[i] == ' ') {
 				transformed_string[j] = 'T';

@@ -51,10 +51,10 @@ void parse_event(char event_string[], struct event **head) {
 }
 
 // the unfolded string has a space
-// as a separator between what where previously separate lines
+// as a separator between what were previously separate lines
 void unfolding_string(char *folded_string, char *unfolded_string) {
 	int j = 0;
-	for (int i = 0; i < strlen(folded_string); i++) {
+	for (size_t i = 0; i < strlen(folded_string); i++) {
 		if (folded_string[i] == '\r' && folded_string[i + 1] == '\n'
 				&& isblank(folded_string[i + 2])) {
 			i += 3;

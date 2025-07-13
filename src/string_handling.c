@@ -12,7 +12,7 @@ void cut_string(char my_string[], char delimiter, int side) {
 	int split = 0;
 
 	int j = 0;
-	for (int i = 0; i < strlen(my_string); i++) {
+	for (size_t i = 0; i < strlen(my_string); i++) {
 		if (my_string[i] == delimiter) {
 			if (split == 0) {
 				split = 1;
@@ -42,7 +42,7 @@ void remove_nl_and_cr(char raw_string[]) {
 
 	// counter for num of elements of processed_string
 	int j = 0;
-	for (int i = 0; i<strlen(raw_string); i++) {
+	for (size_t i = 0; i < strlen(raw_string); i++) {
 		if (raw_string[i] == '\n' || raw_string[i] == '\r') {
 			continue;
 		} else {
@@ -62,7 +62,7 @@ void remove_until_delim(char raw_string[], char delimiter, int occurence) {
 	char *tmp_string = malloc(strlen(raw_string));
 	memset(tmp_string, '\0', strlen(raw_string));
 
-	for (int i = 0; i < strlen(raw_string); i++) {
+	for (size_t i = 0; i < strlen(raw_string); i++) {
 		if (raw_string[i] == delimiter) {
 			chunk++;
 		}
@@ -82,7 +82,7 @@ void remove_whitespace(char raw_string[]) {
 
 	// counter for num of elements of processed_string
 	int j = 0;
-	for (int i = 0; i<strlen(raw_string); i++) {
+	for (size_t i = 0; i < strlen(raw_string); i++) {
 		if (raw_string[i] == '\n' || raw_string[i] == '\r' \
 				|| raw_string[i] == ' ') {
 			continue;

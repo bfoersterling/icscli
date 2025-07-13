@@ -22,7 +22,7 @@ int read_until_nl(int fd, char line[]) {
 // Not only truncates but fills remaining chars with null characters.
 void read_until_string(int fd, char buffer[], char search_string[]) {
 	int i = 0;
-	int j = 0;
+	size_t j = 0;
 
 	while(read(fd, &buffer[i], 1)) {
 		if (buffer[i] == search_string[j]) {
@@ -42,7 +42,7 @@ void read_until_string(int fd, char buffer[], char search_string[]) {
 // Seeks for a string in an open file.
 // It will place the file position AFTER ("_a") that string.
 void seek_string_a(int fd, char search_string[]) {
-	int j = 0;
+	size_t j = 0;
 	char char_reader = '\0';
 
 	while(read(fd, &char_reader, 1)) {
