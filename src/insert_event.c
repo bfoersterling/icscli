@@ -86,7 +86,7 @@ void insert_event(char *file_name) {
 
 void seek_cal_end(int fd) {
 	char search_string[] = "END:VCALENDAR";
-	int j = 0;
+	size_t j = 0;
 	char char_reader = '\0';
 
 	lseek(fd, -1, SEEK_END);
