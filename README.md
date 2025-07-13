@@ -88,6 +88,7 @@ This will run `ctags` on every commit.
 
 #### TODO
 
+- using `c_std=c23` in meson and using bools instead of ints with value 0 or 1
 - add option to import .ics files (for single events)
 - improve and automate unit testing
 - make ics file path configurable
