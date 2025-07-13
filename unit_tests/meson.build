@@ -1,4 +1,7 @@
-project('ics_cli', 'c')
+project(
+  'ics_cli',
+  'c',
+  default_options: 'warning_level=3')
 
 t1e = executable('test_print_upcoming', 'test_print_upcoming.c', '../src/parse_ics.c', '../src/string_handling.c', \
 '../src/list_handling.c', '../src/date_time_handling.c', '../src/file_handling.c')
