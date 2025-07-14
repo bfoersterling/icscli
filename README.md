@@ -88,8 +88,8 @@ This will run `ctags` on every commit.
 
 #### TODO
 
-- using `c_std=c23` in meson and using bools instead of ints with value 0 or 1
+- use env var `ICAL_FILE`, `ICS_FILE`, or `ICALENDAR_FILE`
 - add option to import .ics files (for single events)
-- improve and automate unit testing
+- improve unit tests
 - make ics file path configurable
 - add cli argument that will not show ongoing events, only upcoming events
