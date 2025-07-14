@@ -10,7 +10,7 @@
 
 void insert_event(char *file_name) {
 	int myfd = open(file_name, O_RDWR);
-	int all_day_event = 0;
+	bool all_day_event = false;
 	char summary_buf[256] = "SUMMARY:";
 	char *input_buffer = &summary_buf[8];
 	uuid_t uuid;
@@ -106,7 +106,7 @@ void seek_cal_end(int fd) {
 	}
 }
 
-int binary_user_choice() {
+bool binary_user_choice() {
 	char input_buffer[64] = "";
 	if (fgets (input_buffer, sizeof(input_buffer), stdin) == NULL) {
 		printf ("an fgets error occured\n");
@@ -116,9 +116,9 @@ int binary_user_choice() {
 		exit(1);
 	}
 	if (input_buffer[0] == 'n' || input_buffer[0] == 'N') {
-		return 0;
+		return false;
 	} else if (input_buffer[0] == 'y' || input_buffer[0] == 'Y') {
-		return 1;
+		return true;
 	} else {
 		printf ("Please enter a N/n or Y/y character!\n");
 		exit(1);
@@ -126,7 +126,7 @@ int binary_user_choice() {
 }
 
 // char *start_or_end should contain "start" or "end"
-void get_dtstart_dtend(char input_buffer[], int all_day_event, char *start_or_end) {
+void get_dtstart_dtend(char input_buffer[], bool all_day_event, char *start_or_end) {
 	if (all_day_event) {
 		printf("Enter the %s date in YYYY-mm-dd format!\n", start_or_end);
 		if (fgets(input_buffer, 128, stdin) == NULL) {

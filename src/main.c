@@ -9,7 +9,7 @@ int main(int argc, char **argv) {
 	char *ics_path = malloc(256);
 	ics_path = memset(ics_path, '\0', 256);
 
-	int show_all_events = 0;
+	bool show_all_events = false;
 
 	get_cli_args(argc, argv, &ics_path, &show_all_events);
 

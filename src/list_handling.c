@@ -48,7 +48,7 @@ void free_list(struct event *head)
 
 // print_upcoming() also prints ongoing events
 // because you usually also want to see those
-void print_upcoming(struct event *head, char current_date[], int show_all_events) {
+void print_upcoming(struct event *head, char current_date[], bool show_all_events) {
 	int i = 0;
 	while (head != NULL) {
 		if (strcmp(head->end_date, current_date) >= 0) {
