@@ -88,6 +88,7 @@ This will run `ctags` on every commit.
 
 #### TODO
 
+- add precheck for empty or nonexisting ical file and output cleaner err msg
 - use env var `ICAL_FILE`, `ICS_FILE`, or `ICALENDAR_FILE`
 - add option to import .ics files (for single events) (`-i` for Import, `-n` for insert New event)
 - improve unit tests
