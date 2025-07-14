@@ -89,7 +89,7 @@ This will run `ctags` on every commit.
 #### TODO
 
 - use env var `ICAL_FILE`, `ICS_FILE`, or `ICALENDAR_FILE`
-- add option to import .ics files (for single events)
+- add option to import .ics files (for single events) (`-i` for Import, `-n` for insert New event)
 - improve unit tests
 - make ics file path configurable
 - add cli argument that will not show ongoing events, only upcoming events
