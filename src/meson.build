@@ -1,7 +1,10 @@
 project(
   'ics_cli',
   'c',
-  default_options: 'warning_level=3',
+  default_options: [
+    'warning_level=3',
+    'c_std=gnu23',
+  ],
 )
 
 executable('icscli', 'main.c', 'cli_arg_parsing.c', 'date_time_handling.c', 'insert_event.c', \

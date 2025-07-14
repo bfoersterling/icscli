@@ -1,11 +1,11 @@
 #include "date_time_handling.h"
 #include "string_handling.h"
+#include <assert.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 #include <time.h>
 #include <unistd.h>
-#include <assert.h>
 
 // buffer needs to contain a string with a strlen of 15 (format: "xxxxxxxxTxxxxxx")
 // or a strlen of 16 (format: "YYYYmmddTHHMMSSZ")

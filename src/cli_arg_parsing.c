@@ -2,8 +2,8 @@
 #include "cli_arg_parsing.h"
 #include <stdio.h>
 #include <stdlib.h>
-#include <unistd.h>
 #include <string.h>
+#include <unistd.h>
 
 void usage() {
 	printf ("-a\t\t\tshow all upcoming events (default is 5 events)\n");
@@ -13,7 +13,7 @@ void usage() {
 	exit(0);
 }
 
-void get_cli_args(int argc, char **argv, char **file_name, int *show_all_events) {
+void get_cli_args(int argc, char **argv, char **file_name, bool *show_all_events) {
 	int opt = 0;
 
 	const char *home = getenv("HOME");
@@ -34,7 +34,7 @@ void get_cli_args(int argc, char **argv, char **file_name, int *show_all_events)
 	while ((opt = getopt(argc, argv, "f:ahi")) != -1) {
 		switch(opt) {
 			case 'a':
-				*show_all_events = 1;
+				*show_all_events = true;
 				break;
 			case 'f':
 				*file_name = strcpy(*file_name, optarg);

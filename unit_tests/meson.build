@@ -1,7 +1,11 @@
 project(
   'ics_cli',
   'c',
-  default_options: 'warning_level=3')
+  default_options: [
+    'warning_level=3',
+    'c_std=gnu23',
+  ]
+)
 
 t1e = executable('test_print_upcoming', 'test_print_upcoming.c', '../src/parse_ics.c', '../src/string_handling.c', \
 '../src/list_handling.c', '../src/date_time_handling.c', '../src/file_handling.c')

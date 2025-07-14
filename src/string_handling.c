@@ -9,18 +9,18 @@ void cut_string(char my_string[], char delimiter, int side) {
 	char part1[256] = "";
 	char part2[256] = "";
 
-	int split = 0;
+	bool split = false;
 
 	int j = 0;
 	for (size_t i = 0; i < strlen(my_string); i++) {
 		if (my_string[i] == delimiter) {
-			if (split == 0) {
-				split = 1;
+			if (!split) {
+				split = true;
 				continue;
 			}
 		}
 
-		if (split == 0) {
+		if (!split) {
 			part1[i] = my_string[i];
 		} else {
 			part2[j] = my_string[i];
