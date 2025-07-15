@@ -1,6 +1,7 @@
+#include "date_time_handling.h"
 #include "insert_event.h"
 #include "string_handling.h"
-#include "date_time_handling.h"
+#include <errno.h>
 #include <fcntl.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -8,8 +9,17 @@
 #include <unistd.h>
 #include <uuid/uuid.h>
 
+// Prompts a user to insert data for one event and saves it in
+// the iCalendar file at "file_name".
+// Exits the program afterwards.
 void insert_event(char *file_name) {
 	int myfd = open(file_name, O_RDWR);
+	if (myfd == -1) {
+		fprintf(stderr, "Error opening file \"%s\".\n", file_name);
+		fprintf(stderr, "%s.\n", strerror(errno));
+		exit(1);
+	}
+
 	bool all_day_event = false;
 	char summary_buf[256] = "SUMMARY:";
 	char *input_buffer = &summary_buf[8];
