@@ -4,6 +4,7 @@
 #include "string_handling.h"
 #include <assert.h>
 #include <ctype.h>
+#include <errno.h>
 #include <fcntl.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -72,17 +73,18 @@ void unfolding_string(char *folded_string, char *unfolded_string) {
 	}
 }
 
-/* this function takes the head of an empty initialized event list
- * and the path to the ics file
- * it will "fill" the list
- */
+// Takes the head of an empty initialized event list
+// and the path to the ics file.
+// "Fills" the linked list.
+// Exits the program on error.
 void parse_ics_file(char *file_path, struct event **head) {
 	char my_event[8192] = "";
 	char unfolded_event[8192] = "";
 
 	int myfd = open(file_path, O_RDONLY);
 	if (myfd == -1) {
-		perror ("Error opening file");
+		fprintf(stderr, "Error opening file \"%s\".\n", file_path);
+		fprintf(stderr, "%s.\n", strerror(errno));
 		exit(1);
 	}
 
