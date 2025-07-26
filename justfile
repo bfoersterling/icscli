@@ -18,7 +18,7 @@ install: default
 	meson install -C src/builddir
 
 [working-directory: 'src']
-generate-llvm:
+generate-llvm: clean
 	clang -S -emit-llvm -std=gnu23 *.c
 	llvm-link -S -v *.ll -o icscli.ll
 
