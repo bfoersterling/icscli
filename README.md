@@ -3,7 +3,7 @@
 #### Use Case
 
 - show upcoming events of an .ics file
-- insert events in your calendar
+- insert events in iCalendar file
 
 
 #### Installation
@@ -90,7 +90,9 @@ This will run `ctags` on every commit.
 
 - add precheck for empty or nonexisting ical file and output cleaner err msg
 - use env var `ICAL_FILE`, `ICS_FILE`, or `ICALENDAR_FILE`
+- remove all events from a file that lie in the past
 - add option to import .ics files (for single events) (`-i` for Import, `-n` for insert New event)
+- option to extract a single event from a file and create a new single event file for imports
 - improve unit tests
 - make ics file path configurable
 - add cli argument that will not show ongoing events, only upcoming events
