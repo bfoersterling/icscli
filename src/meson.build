@@ -22,5 +22,5 @@ executable(
   'icscli',
   sources,
   link_args : '-luuid',
-  install: true, install_dir: '/usr/local/bin'
+  install: true, install_dir: '/usr/local/bin',
 )
