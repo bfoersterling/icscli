@@ -17,6 +17,12 @@ test:
 install: default
 	meson install -C src/builddir
 
+[working-directory: 'src']
+generate-llvm:
+	clang -S -emit-llvm -std=gnu23 *.c
+	llvm-link -S -v *.ll -o icscli.ll
+
 clean:
 	rm -rf src/builddir
 	rm -rf unit_tests/builddir
+	rm -f src/*.ll
