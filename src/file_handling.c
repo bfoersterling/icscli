@@ -36,7 +36,8 @@ void read_until_string(int fd, char buffer[], char search_string[]) {
 		i++;
 	}
 	size_t truncate_position = strlen(buffer) - strlen(search_string);
-	memset(&buffer[truncate_position], '\0', truncate_position);
+
+	memset(&buffer[truncate_position], '\0', strlen(buffer) - truncate_position);
 }
 
 // Seeks for a string in an open file.
