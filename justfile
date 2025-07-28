@@ -22,6 +22,10 @@ generate-llvm: clean
 	clang -S -emit-llvm -std=gnu23 *.c
 	llvm-link -S -v *.ll -o icscli.ll
 
+[working-directory: 'src']
+llvm-to-binary: generate-llvm
+	clang icscli.ll -o icscli -luuid
+
 clean:
 	rm -rf src/builddir
 	rm -rf unit_tests/builddir
