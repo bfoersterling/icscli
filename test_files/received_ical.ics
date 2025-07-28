@@ -4,14 +4,14 @@ PRODID:-//www.example.com//iCal 4.0.3//EN
 METHOD:PUBLISH
 CALSCALE:GREGORIAN
 BEGIN:VEVENT
-CREATED:20240102T105004
+CREATED:20260102T105004
 UID:ical-19709628-example-com
-DTSTART;VALUE=DATE:20240622T000000
-DTEND;VALUE=DATE:20240711T000000
+DTSTART;VALUE=DATE:20260622T000000
+DTEND;VALUE=DATE:20260711T000000
 TRANSP:TRANSPARENT
 SUMMARY:vacation (approved)
-DESCRIPTION:vacation\n\nstatus: approved\nworkdays: 13,0\n\nentered by: John Doe\nentry date: Tue, 2024-01-02, 10:09 AM\napproved on: -\n\n\n\nPowered by example.com\n
-DTSTAMP:20240102T105004
+DESCRIPTION:vacation\n\nstatus: approved\nworkdays: 13,0\n\nentered by: John Doe\nentry date: Tue, 2026-01-02, 10:09 AM\napproved on: -\n\n\n\nPowered by example.com\n
+DTSTAMP:20260102T105004
 CATEGORIES:example.com
 X-MICROSOFT-CDO-BUSYSTATUS:OOF
 SEQUENCE:8
