@@ -4,6 +4,7 @@
 #include "date_time_handling.h"
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 int main(int argc, char **argv) {
 	char *ics_path = malloc(256);
